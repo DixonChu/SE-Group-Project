@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox minHeight="400.0" minWidth="640.0" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.ac.aber.cs221.nine.UIHandler">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <HBox prefHeight="53.0" prefWidth="634.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Button fx:id="homeSceneButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeToHomeScene" text="Dictionary" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="revisionListSceneButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeToRevisionListScene" text="Practice List" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="revisionSceneButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeToRevisionScene" text="Revise" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="settingsSceneButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeToSettingsScene" text="Settings" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                    </children>
+                </HBox>
+            <BorderPane layoutX="-4.0" layoutY="53.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="347.0" prefWidth="647.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="53.0">
+               <center>
+                  <Button fx:id="flashcard" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Flashcard">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Button>
+               </center>
+               <bottom>
+                   <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                       <children>
+                           <Button fx:id="lastFlashcardButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#lastFlashcard" prefHeight="102.0" prefWidth="219.0" text="Back">
+                               <font>
+                                   <Font name="System Bold Italic" size="39.0" />
+                               </font>
+                           </Button>
+                           <Button fx:id="flipFlashcardButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#flipFlashcard" text="Flip" HBox.hgrow="ALWAYS">
+                               <font>
+                                   <Font name="System Bold Italic" size="48.0" />
+                               </font>
+                           </Button>
+                           <Button fx:id="nextFlashcardButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#nextFlashcard" text="Next" HBox.hgrow="ALWAYS">
+                               <font>
+                                   <Font name="System Bold Italic" size="39.0" />
+                               </font>
+                           </Button>
+                       </children>
+                   </HBox>
+               </bottom>
+            </BorderPane>
+                <BorderPane mouseTransparent="true" prefHeight="81.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <center>
+                        <AnchorPane fx:id="notificationBoxPane" prefHeight="200.0" prefWidth="200.0" visible="false" BorderPane.alignment="CENTER">
+                            <children>
+                                <Rectangle fx:id="notificationBox" arcHeight="5.0" arcWidth="5.0" fill="#ffc0d2" height="48.0" stroke="BLACK" strokeType="INSIDE" width="618.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="12.0" />
+                                <Label fx:id="notificationMessageLabel" layoutX="18.0" layoutY="26.0" prefHeight="41.0" prefWidth="606.0" text="Label" />
+                            </children>
+                        </AnchorPane>
+                    </center>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

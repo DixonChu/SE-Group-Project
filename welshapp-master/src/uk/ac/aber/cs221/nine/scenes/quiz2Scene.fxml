@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox minHeight="400.0" minWidth="640.0" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.ac.aber.cs221.nine.UIHandler">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <HBox prefHeight="53.0" prefWidth="634.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Button fx:id="homeSceneButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeToHomeScene" text="Dictionary" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="revisionListSceneButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeToRevisionListScene" text="Practice List" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="revisionSceneButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeToRevisionScene" text="Revise" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="settingsSceneButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeToSettingsScene" text="Settings" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
+                    </children>
+                </HBox>
+            <VBox layoutY="53.0" prefHeight="347.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
+               <children>
+                  <HBox prefHeight="120.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+                     <children>
+                         <Label fx:id="currentScoreLabel" alignment="CENTER" prefHeight="58.0" prefWidth="194.0" text="2/5" textAlignment="CENTER">
+                             <font>
+                                 <Font size="14.0" />
+                             </font>
+                         </Label>
+                         <ProgressBar fx:id="progressBar" opacity="0.74" prefHeight="60.0" prefWidth="651.0" progress="0.4" />
+                     </children>
+                     <VBox.margin>
+                        <Insets right="1.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="347.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Please type this word in the other language:" textAlignment="CENTER" />
+                        <Label fx:id="answerWordLabel" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="mynd" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="answerButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Button>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Enter the word:" textAlignment="CENTER" />
+                              <TextField fx:id="answerTextField" promptText="Word here...">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+            <BorderPane mouseTransparent="true" prefHeight="81.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <center>
+                  <AnchorPane fx:id="notificationBoxPane" prefHeight="200.0" prefWidth="200.0" visible="false" BorderPane.alignment="CENTER">
+                     <children>
+                         <Rectangle fx:id="notificationBox" arcHeight="5.0" arcWidth="5.0" fill="#d1ffef" height="48.0" stroke="BLACK" strokeType="INSIDE" width="618.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="12.0" />
+                        <Label fx:id="notificationMessageLabel" layoutX="18.0" layoutY="26.0" prefHeight="41.0" prefWidth="606.0" text="Label" />
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Rectangle?>
+<VBox minHeight="400.0" minWidth="640.0" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.ac.aber.cs221.nine.UIHandler">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <HBox prefHeight="53.0" prefWidth="634.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                      AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Button fx:id="homeSceneButton" maxHeight="1.7976931348623157E308"
+                                maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
+                                mnemonicParsing="false" onAction="#changeToHomeScene" text="Dictionary"
+                                textAlignment="CENTER" HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="revisionListSceneButton" maxHeight="1.7976931348623157E308"
+                                maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
+                                mnemonicParsing="false" onAction="#changeToRevisionListScene" text="Practice List"
+                                textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                        </Button>
+                        <Button fx:id="revisionSceneButton" maxHeight="1.7976931348623157E308"
+                                maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
+                                mnemonicParsing="false" onAction="#changeToRevisionScene" text="Revise"
+                                textAlignment="CENTER" HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="settingsSceneButton" maxHeight="1.7976931348623157E308"
+                                maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
+                                mnemonicParsing="false" onAction="#changeToSettingsScene" text="Settings"
+                                textAlignment="CENTER" HBox.hgrow="ALWAYS"/>
+                    </children>
+                </HBox>
+                <HBox layoutY="53.0" prefHeight="43.0" prefWidth="640.0" AnchorPane.leftAnchor="0.0"
+                      AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <TextField fx:id="searchBar" maxHeight="1.7976931348623157E308"
+                                   maxWidth="1.7976931348623157E308" onKeyTyped="#searchButtonClickInUI"
+                                   promptText="Enter search term here" HBox.hgrow="ALWAYS">
+                            <HBox.margin>
+                                <Insets/>
+                            </HBox.margin>
+                        </TextField>
+                        <Button fx:id="letterSearchSelectButton" mnemonicParsing="false"
+                                onAction="#openLetterSearchMenu" prefHeight="42.0" prefWidth="50.0" text="abc"
+                                HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font name="System Bold" size="13.0"/>
+                            </font>
+                        </Button>
+                        <Button fx:id="searchClearButton" mnemonicParsing="false" onAction="#clearSearchBar"
+                                prefHeight="42.0" prefWidth="30.0" text="❌" HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="changeLanguageButton" maxHeight="1.7976931348623157E308"
+                                maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeLanguageInUI"
+                                prefHeight="45.0" prefWidth="49.0" textOverrun="CLIP">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+                <HBox layoutY="96.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="96.0">
+                    <children>
+                        <TableView fx:id="dictionaryTableView" prefHeight="403.0" prefWidth="640.0" HBox.hgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="englishWordColumn" prefWidth="265.14281356334686" text="English"/>
+                                <TableColumn fx:id="welshWordColumn" minWidth="1.14288330078125"
+                                             prefWidth="249.71435546875" text="Welsh"/>
+                                <TableColumn fx:id="wordTypeColumn" prefWidth="69.71435546875" resizable="false"
+                                             text="Word Type"/>
+                                <TableColumn fx:id="favoriteColumn" prefWidth="55.428466796875" resizable="false"
+                                             text="Revise?"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </HBox>
+                <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                            prefHeight="50.0" prefWidth="50.0" AnchorPane.bottomAnchor="10.0"
+                            AnchorPane.rightAnchor="10.0">
+                    <center>
+                        <Button fx:id="addWordButton" maxHeight="1.7976931348623157E308"
+                                maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                onAction="#openAddWordToDictionaryUI" text="➕" textFill="#339f38" textOverrun="CLIP"
+                                BorderPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="23.0"/>
+                            </font>
+                        </Button>
+                    </center>
+                </BorderPane>
+                <BorderPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                            minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0"
+                            AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0"/>
+                <BorderPane prefHeight="81.0" prefWidth="640.0" mouseTransparent="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <center>
+                        <AnchorPane fx:id="notificationBoxPane" visible="false" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <Rectangle fx:id="notificationBox" arcHeight="5.0" arcWidth="5.0" fill="#ffc0d2" height="48.0" stroke="BLACK" strokeType="INSIDE" width="618.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="12.0" />
+                                <Label fx:id="notificationMessageLabel" layoutX="18.0" layoutY="26.0" prefHeight="41.0" prefWidth="606.0" text="Label" />
+                            </children>
+                        </AnchorPane>
+                    </center>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

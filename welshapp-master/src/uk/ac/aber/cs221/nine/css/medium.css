@@ -1,0 +1,5 @@
+.table-view .table-cell{
+    -fx-font-size:18px;           //the font size you asked in the comments below
+    /* -fx-text-fill:orange; */
+
+}
