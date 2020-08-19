@@ -1,2 +1,2 @@
 # SE-Group-Project
-This is my second year Software Engineering group project.
+Second year Software Engineering group project.
